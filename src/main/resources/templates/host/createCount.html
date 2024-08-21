@@ -14,7 +14,7 @@
             display: flex;
         }
 
-        .warning{
+        .warning {
             color: red;
         }
 
@@ -75,8 +75,9 @@
 
         <div class="member-count">
             <h1>최소 인원 선택</h1>
-            <label for="min-count">최소 인원
-            <input type="number" id="min-count" name="min-count" placeholder="1" min="1" max="5">
+            <p>최소 인원</p>
+            <label>
+                <input type="number" id="min-count" name="min-count" placeholder="1" min="1" max="5">
             </label>
             <p>명</p>
         </div>
@@ -95,8 +96,10 @@
 
         <div class="member-count">
             <h1>최대 인원 선택</h1>
-            <label for="max-count">최대 인원
-            <input type="number" id="max-count" name="max-count" placeholder="1" min="1" max="5">
+            <!--            라벨 안에 집어넣으면 글씨와 인풋의 높이가 맞아지는데 어떤게 맞는건지 -->
+            <p>최대 인원</p>
+            <label>
+                <input type="number" id="max-count" name="max-count" placeholder="1" min="1" max="5">
             </label>
             <p>명</p>
         </div>
@@ -116,7 +119,7 @@
 
     </div>
 
-    <p class = "warning">* 본인을 제외한 인원 수를 입력하세요.</p>
+    <p class="warning">* 본인을 제외한 인원 수를 입력하세요.</p>
 
     <div class="button-box">
         <h1>하단 버튼</h1>
