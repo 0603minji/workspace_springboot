@@ -1,0 +1,17 @@
+.footer {
+    background-color: #3A4E67;
+    color: #FFFFFF;
+    padding: 30px 20px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+a {
+    color: white;
+}
+
+.footer h1 {
+    font-weight: 800;
+    margin-top: 0;
+}
