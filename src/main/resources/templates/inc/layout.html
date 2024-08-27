@@ -7,12 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/header.css"/>
     <link rel="stylesheet" href="/css/footer.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-    <div th:replace="~{inc/header::minji}"></div>
+    <div th:replace="~{inc/header::header}"></div>
     <div layout:fragment="main"></div>
     <div th:replace="~{inc/footer::footer}"></div>
 </body>
