@@ -28,8 +28,14 @@ public class HostController {
         return "host/create/spots";
     }
 
+
     @GetMapping("login")
     public String login() {
         return "host/login";
+    }
+
+    @GetMapping("create/image")
+    public String image() {
+        return "host/create/image";
     }
 }
