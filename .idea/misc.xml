@@ -4,10 +4,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-<<<<<<< HEAD
       <option value="$PROJECT_DIR$/M2J2/pom.xml" />
-=======
->>>>>>> 37da90ed1116d173a5dc497de79444b2a67b68cb
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
