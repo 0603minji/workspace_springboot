@@ -38,4 +38,9 @@ public class HostController {
     public String image() {
         return "host/create/image";
     }
+
+    @GetMapping("create/schedule")
+    public String schedule() {
+        return "host/create/schedule";
+    }
 }
