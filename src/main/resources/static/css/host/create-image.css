@@ -1,12 +1,12 @@
 main {
     padding-top: 0;
     padding-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
+main h1 {
     display: none;
 }
-
 .container-wrapper {
     min-width: 393px;
     max-width: 100%;
@@ -16,6 +16,7 @@ h1 {
     display: block;
     font-size: 18px;
     font-weight: bold;
+    color : black;
 }
 
 .container {
@@ -84,8 +85,9 @@ h1 {
 
 .upload-button {
     font-size: 16px;
+    font-weight: bold;
     display: block;
-    min-width: 313px;
+    min-width: 383px;
     max-width: 100%;
     padding: 10px;
     margin-top: 30px;
@@ -102,6 +104,10 @@ h1 {
     justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.action-buttons h1{
+    display: none;
 }
 
 .action-buttons button {
@@ -133,7 +139,9 @@ h1 {
     justify-content: space-around; /* 각 탭 사이의 간격을 균등하게 분배 */
     padding: 0;
 }
-
+.menu-tab h1{
+    display: none;
+}
 /* 각 탭의 스타일 */
 .menu-tab-item {
     padding: 8px 12px; /* 패딩 조정 */

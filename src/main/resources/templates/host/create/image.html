@@ -22,30 +22,52 @@
         <a href="#" class="menu-tab-item">비용</a>
         <a href="#" class="menu-tab-item active">사진</a>
     </nav>
+
     <section class="container-wrapper">
         <h1>사진 업로드</h1>
         <div class="container">
+
             <div class="photo-grid">
+
                 <div class="photo-box">
                     <span>대표</span>
+                    <img src="" alt="디폴트 이미지"/>
                 </div>
+
                 <div class="photo-box">
                     <span class="number">1</span>
+                    <img src="" alt="디폴트 이미지"/>
                 </div>
+
                 <div class="photo-box">
                     <span class="number">2</span>
+                    <img src="" alt="디폴트 이미지"/>
                 </div>
+
                 <div class="photo-box">
                     <span class="number">3</span>
+                    <img src="" alt="디폴트 이미지"/>
                 </div>
+
                 <div class="photo-box">
                     <span class="number">4</span>
+                    <img src="" alt="디폴트 이미지"/>
                 </div>
+
                 <div class="photo-box">
                     <span class="number">5</span>
+                    <img src="" alt="디폴트 이미지"/>
                 </div>
+
             </div>
-            <div class="upload-button">+ 업로드</div>
+
+            <form method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>이미지 업로드 버튼</legend>
+                    <label><input name="img" multiple type="file"></label>
+                </fieldset>
+                <button class="upload-button">업로드 완료</button>
+            </form>
         </div>
     </section>
 
