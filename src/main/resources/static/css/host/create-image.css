@@ -48,15 +48,10 @@ main h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
-.photo-box span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 8px;
-    left: 8px;
+span {
     background-color: #092241;
     color: white;
     padding: 8px 12px;
@@ -66,39 +61,53 @@ main h1 {
     width: 24px;
 }
 
-.photo-box .number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 8px;
-    left: 8px;
+.number {
     background-color: white;
     color: #092241;
-    padding: 8px 12px;
+    padding: 5px 20px;
     border: 1px solid #092241;
     border-radius: 100px;
     font-size: 12px;
     height: 8px;
     width: 24px;
 }
-
-.upload-button {
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    min-width: 383px;
-    max-width: 100%;
-    padding: 10px;
-    margin-top: 30px;
-    background-color: #249AE4;
-
+.upload-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    cursor: pointer;
-    border-radius: 10px;
-    color: white;
+    gap: 20px;
+    /*gap: 20px; !* Space between the two buttons *!*/
 }
-
+.file-upload {
+    background-color: #249AE4; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 180px;
+}
+.upload-button {
+    background-color: #249AE4; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 180px;
+}
+.upload-button:hover {
+    background-color: #7CC6F4;
+}
 .action-buttons {
     display: flex;
     justify-content: space-between;
@@ -124,6 +133,13 @@ main h1 {
 .action-buttons button:hover {
     background-color: #064073; /* 버튼 호버 시 배경색 */
 }
+
+fieldset {
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 30px;
+    }
 
 /* menu-tab 스타일 */
 .menu-tab {

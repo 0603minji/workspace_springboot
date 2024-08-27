@@ -28,46 +28,59 @@
         <div class="container">
 
             <div class="photo-grid">
-
+                <div>
+                <span>대표</span>
                 <div class="photo-box">
-                    <span>대표</span>
                     <img src="" alt="디폴트 이미지"/>
                 </div>
-
-                <div class="photo-box">
-                    <span class="number">1</span>
-                    <img src="" alt="디폴트 이미지"/>
                 </div>
 
+                <div>
+                <span class="number">1</span>
                 <div class="photo-box">
+                    <img src="" alt="디폴트 이미지"/>
+                </div>
+                </div>
+
+                <div>
                     <span class="number">2</span>
-                    <img src="" alt="디폴트 이미지"/>
+                    <div class="photo-box">
+                        <img src="" alt="디폴트 이미지"/>
+                    </div>
                 </div>
 
-                <div class="photo-box">
+                <div>
                     <span class="number">3</span>
-                    <img src="" alt="디폴트 이미지"/>
+                    <div class="photo-box">
+                        <img src="" alt="디폴트 이미지"/>
+                    </div>
                 </div>
 
-                <div class="photo-box">
+                <div>
                     <span class="number">4</span>
-                    <img src="" alt="디폴트 이미지"/>
+                    <div class="photo-box">
+                        <img src="" alt="디폴트 이미지"/>
+                    </div>
                 </div>
 
-                <div class="photo-box">
+                <div>
                     <span class="number">5</span>
-                    <img src="" alt="디폴트 이미지"/>
+                    <div class="photo-box">
+                        <img src="" alt="디폴트 이미지"/>
+                    </div>
                 </div>
-
             </div>
 
             <form method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend>이미지 업로드 버튼</legend>
-                    <label><input name="img" multiple type="file"></label>
+                <fieldset style="border: none">
+                    <legend style="display: none">이미지 업로드 버튼</legend>
+                    <div class="upload-buttons">
+                        <label class="file-upload"><input name="img" multiple type="file" style="display:none;">파일 선택</label>
+                        <button class="upload-button" type="submit">업로드</button>
+                    </div>
                 </fieldset>
-                <button class="upload-button">업로드 완료</button>
             </form>
+
         </div>
     </section>
 
