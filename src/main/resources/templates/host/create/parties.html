@@ -14,7 +14,7 @@
 <main layout:fragment="main">
     <h1>인원 탭</h1>
 
-    <div class="menu-tab">
+    <nav class="menu-tab">
         <h1>인원 탭 활성화 메뉴</h1>
         <a href="#" class="menu-tab-item">기본정보</a>
         <a href="#" class="menu-tab-item">일정</a>
@@ -22,15 +22,15 @@
         <a href="createCount" class="menu-tab-item active">인원</a>
         <a href="createCost" class="menu-tab-item">비용</a>
         <a href="#" class="menu-tab-item">사진</a>
-    </div>
+    </nav>
 
     <div>
         <h1>인원 선택</h1>
 
-        <form>
+        <form method="post">
             <fieldset class="member-count">
                 <legend>최소 인원</legend>
-                <select name="min-count" id="min-count">
+                <select name="minCount" id="min-count">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -42,10 +42,10 @@
         </form>
 
 
-        <form>
+        <form method="post">
             <fieldset class="member-count">
                 <legend>최대 인원</legend>
-                <select name="min-count" id="max-count">
+                <select name="minCount" id="max-count">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
