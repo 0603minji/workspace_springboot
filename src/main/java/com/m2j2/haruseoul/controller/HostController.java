@@ -27,4 +27,11 @@ public class HostController {
     public String spots() {
         return "host/create/spots";
     }
+
+    @GetMapping("create/image")
+    public String image() {
+        return "host/create/image";
+    }
+
+
 }

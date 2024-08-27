@@ -15,9 +15,14 @@ public class HomeController {
     public String aside() {
         return "aside";
     }
-
+  
     @GetMapping("/host/aside")
     public String asideHost() {
         return "aside-host";
+    }
+
+    @GetMapping("/home")
+    public String home() {
+        return "host/home";
     }
 }

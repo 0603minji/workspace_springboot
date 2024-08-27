@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{inc/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진업로드</title>
+    <link rel="stylesheet" href="/css/host/create-image.css"/>
+</head>
+
+<body>
+<main layout:fragment="main">
+    <h1>사진 탭</h1>
+    <nav class="menu-tab">
+        <h1>메뉴탭</h1>
+        <a href="#" class="menu-tab-item">기본정보</a>
+        <a href="#" class="menu-tab-item">일정</a>
+        <a href="#" class="menu-tab-item">장소</a>
+        <a href="#" class="menu-tab-item">인원</a>
+        <a href="#" class="menu-tab-item">비용</a>
+        <a href="#" class="menu-tab-item active">사진</a>
+    </nav>
+    <section class="container-wrapper">
+        <h1>사진 업로드</h1>
+        <div class="container">
+            <div class="photo-grid">
+                <div class="photo-box">
+                    <span>대표</span>
+                </div>
+                <div class="photo-box">
+                    <span class="number">1</span>
+                </div>
+                <div class="photo-box">
+                    <span class="number">2</span>
+                </div>
+                <div class="photo-box">
+                    <span class="number">3</span>
+                </div>
+                <div class="photo-box">
+                    <span class="number">4</span>
+                </div>
+                <div class="photo-box">
+                    <span class="number">5</span>
+                </div>
+            </div>
+            <div class="upload-button">+ 업로드</div>
+        </div>
+    </section>
+
+    <nav class="action-buttons">
+        <h1>메뉴 이동 버튼</h1>
+        <a href="">
+            <button>이전</button>
+        </a>
+        <a href="">
+            <button>저장 후 나가기</button>
+        </a>
+        <a href="">
+            <button>작성 완료</button>
+        </a>
+    </nav>
+</main>
+</body>
+</html>
