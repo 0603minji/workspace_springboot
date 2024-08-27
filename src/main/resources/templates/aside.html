@@ -13,6 +13,10 @@
             padding: 0; /* 기본 패딩 제거 */
         }
 
+        .display-none {
+            display: none;
+        }
+
         .aside {
             width: 256px;
             height: 100vh; /* 전체 화면 높이 */
@@ -144,14 +148,15 @@
 
 <aside class="aside">
     <!-- header -->
-    <header>
-        <div>
-            <a href="">
-                <img src="/image/pin.svg" alt="Exit" class="exit-icon">
-            </a>
-        </div>
-        <h1 class="logo"><img src="/image/logo.svg" alt="service name"/></h1>
-    </header>
+
+    <h1 class="display-none">어사이드 제목</h1>
+    <div>
+        <a href="">
+            <img src="/image/pin.svg" alt="Exit" class="exit-icon">
+        </a>
+    </div>
+    <div class="logo"><img src="/image/logo.svg" alt="service name"/></div>
+
 
     <div class="login-button-container">
         <a href="/guest/login">게스트 로그인 및 회원가입</a>
@@ -159,20 +164,21 @@
     </div>
 
     <nav class="help-container">
+        <h1 class="display-none">고객센터 메뉴</h1>
         <ul>
             <li><a href="">공지사항</a></li>
             <li><a href="">자주 묻는 질문</a></li>
         </ul>
     </nav>
 
-    <div class="language-select-container">
-        <div class="language-select">
-            <select name="languages" id="lang">
-                <option value="English">English</option>
-                <option value="Korean">Korean</option>
-            </select>
-        </div>
+
+    <div class="language-select">
+        <select name="languages" id="lang">
+            <option value="English">English</option>
+            <option value="Korean">Korean</option>
+        </select>
     </div>
+
 
 </aside>
 
