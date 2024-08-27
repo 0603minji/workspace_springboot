@@ -13,12 +13,12 @@ public class HomeController {
 
     @GetMapping("/aside")
     public String aside() {
-        return "aside";
+        return "inc/aside";
     }
   
     @GetMapping("/host/aside")
     public String asideHost() {
-        return "aside-host";
+        return "inc/aside-host";
     }
 
     @GetMapping("/home")
