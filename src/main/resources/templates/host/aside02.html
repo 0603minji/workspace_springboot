@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개설하기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            min-width: 390px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 20px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .title img {
+            width: 20px; /* 원하는 이미지 크기로 조정 */
+            height: 20px; /* 원하는 이미지 크기로 조정 */
+        }
+
+        .program-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .program-label img {
+            width: 20px; /* 원하는 이미지 크기로 조정 */
+            height: 20px; /* 원하는 이미지 크기로 조정 */
+            margin-right: 4px;
+            vertical-align: middle; /* 이미지와 텍스트 정렬을 맞추기 위해 사용 */
+        }
+
+        .program-label span {
+            line-height: 20px; /* 텍스트와 이미지 높이를 맞추기 위해 설정 */
+            display: flex;
+            align-items: center; /* 수직 정렬 */
+        }
+
+        .confirm-btn {
+            min-width: 62px;
+            padding: 10px 2px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-left: auto; /* 오른쪽 정렬을 위해 사용 */
+            display: block; /* 버튼을 블록 요소로 변경하여 margin-left 적용 */
+        }
+
+        .dropdown {
+            position: relative;
+            width: 100%;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .dropdown-label {
+            min-width: max-content;
+            line-height: 20px; /* 텍스트와 이미지 높이를 맞추기 위해 설정 */
+            display: flex;
+            align-items: center; /* 수직 정렬 */
+            font-size: 14px;
+            color: #9DA7B3;
+            border: 1px solid #ddd; /* 테두리 추가 */
+            border-radius: 5px; /* 둥근 모서리 추가 */
+            padding: 8px; /* 내부 패딩 추가 */
+            background-color: #fff; /* 배경색 설정 */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 추가 */
+            cursor: pointer; /* 커서 변경 */
+        }
+
+        .dropdown-label img {
+            width: 20px; /* 원하는 이미지 크기로 조정 */
+            height: 20px; /* 원하는 이미지 크기로 조정 */
+            vertical-align: middle; /* 이미지와 텍스트 정렬을 맞추기 위해 사용 */
+            color: #9DA7B3;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            max-width: fit-content;
+            max-height: 150px; /* 최대 높이 설정 */
+            overflow-y: auto; /* 스크롤 활성화 */
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 12px 16px;
+        }
+
+        .dropdown-content label {
+            display: block;
+            height: 40px;
+            font-size: 16px;
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
+
+        /* Hover 상태에서 dropdown-content를 표시 */
+        .dropdown-label:hover + .dropdown-content {
+            display: block;
+        }
+
+        /* dropdown-content 위에 마우스가 올라갔을 때 계속 표시 */
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        /* 카테고리 체크박스 스타일 */
+        .category-checkboxes {
+            margin-bottom: 20px;
+            background-color: #F5F5F5;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 25px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 추가 */
+        }
+
+        .category-checkboxes label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="title">필터<img src="/static/image/host/close.svg" alt="닫기"></div>
+    <label class="program-label" for="program">
+        <span>프로그램</span>
+        <span style="font-size: 14px; color:#24A0ED">
+            <img src="/static/image/host/init.svg" alt="초기화">
+            초기화
+        </span>
+    </label>
+    <div id="program" class="dropdown">
+        <div class="dropdown-label">
+            <img style="margin-right: 4px" src="/static/image/host/search.svg" alt="search">
+            프로그램 선택
+            <img style="margin-left: auto" src="/static/image/host/dropdown.svg" alt="dropdown">
+        </div>
+        <div class="dropdown-content">
+            <label><input type="checkbox" name="program1" value="program1"> 한복입고 북촌 인기 카페 2곳 방문하기</label>
+            <label><input type="checkbox" name="program2" value="program2"> 청계천과 광장시장 돌아보고 힙지로에서 저녁먹기</label>
+            <label><input type="checkbox" name="program3" value="program3"> 연희동에서 브런치먹고 도자기공방 원데이클래스...</label>
+            <label><input type="checkbox" name="program4" value="program4"> 남산타워 방문 후 명동 쇼핑 투어</label>
+            <label><input type="checkbox" name="program5" value="program5"> 홍대에서 인디 밴드 공연 관람 및 야시장 탐방</label>
+            <label><input type="checkbox" name="program6" value="program6"> 강남에서 럭셔리 디너와 클럽 나이트 즐기기</label>
+            <label><input type="checkbox" name="program7" value="program7"> 한강에서 자전거 타기 및 피크닉</label>
+            <label><input type="checkbox" name="program8" value="program8"> 서울 숲에서 자연과 함께하는 힐링 워크</label>
+            <label><input type="checkbox" name="program9" value="program9"> 이태원에서 다문화 음식을 즐기며 문화 체험</label>
+        </div>
+    </div>
+
+    <label class="program-label" for="category">
+        <span>카테고리</span>
+        <span style="font-size: 14px; color:#24A0ED">
+            <img src="/static/image/host/init.svg" alt="초기화">
+            초기화
+        </span>
+    </label>
+    <div class="category-checkboxes" id="category">
+        <label><input type="checkbox" name="Activity" value="Activity"> Activity</label>
+        <label><input type="checkbox" name="Culture2" value="Culture"> Culture</label>
+        <label><input type="checkbox" name="Shopping" value="Shopping"> Shopping</label>
+        <label><input type="checkbox" name="Food" value="Food"> Food</label>
+        <label><input type="checkbox" name="Nature" value="Nature"> Nature</label>
+    </div>
+
+    <label class="program-label" for="program_status">
+        <span>프로그램 상태</span>
+        <span style="font-size: 14px; color:#24A0ED">
+            <img src="/static/image/host/init.svg" alt="초기화">
+            초기화
+        </span>
+    </label>
+    <div class="category-checkboxes" id="program_status">
+        <label><input type="checkbox" name="작성 중" value="Activity"> Activity</label>
+        <label><input type="checkbox" name="작성 완료" value="Culture"> Culture</label>
+        <label><input type="checkbox" name="모집 중" value="Shopping"> Shopping</label>
+        <label><input type="checkbox" name="모집 완료" value="Food"> Food</label>
+        <label><input type="checkbox" name="폐지 임박" value="Nature"> Nature</label>
+        <label><input type="checkbox" name="만료" value="Nature"> Nature</label>
+        <label><input type="checkbox" name="폐지" value="Nature"> Nature</label>
+    </div>
+
+    <button type="submit" class="confirm-btn">확인</button>
+</div>
+</body>
+</html>
