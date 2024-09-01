@@ -21,7 +21,6 @@
             padding: 20px 20px;
         }
 
-
         .title {
             font-size: 18px;
             font-weight: bold;
@@ -45,17 +44,34 @@
             height: 20px; /* 원하는 이미지 크기로 조정 */
         }
 
-        .program-label {
-            font-size: 18px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
         .program-select {
             width: 100%;
             padding: 5px;
             font-size: 14px;
             margin-bottom: 20px;
+        }
+
+        .program-label, .ongoing-date-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ongoing-date-label img {
+            width: 20px; /* 원하는 이미지 크기로 조정 */
+            height: 20px; /* 원하는 이미지 크기로 조정 */
+            margin-right: 4px;
+            vertical-align: middle; /* 이미지와 텍스트 정렬을 맞추기 위해 사용 */
+        }
+
+        .ongoing-date-label span {
+            line-height: 20px; /* 텍스트와 이미지 높이를 맞추기 위해 설정 */
+            display: flex;
+            align-items: center; /* 수직 정렬 */
         }
 
         .calendar {
@@ -175,7 +191,7 @@
 <body>
 
 <div class="container">
-    <div class="title">개설하기
+    <div class="title">일정추가
         <button onclick="closeModal()">
             <img src="/static/image/host/close.svg" alt="닫기">
         </button>
@@ -186,7 +202,16 @@
         <option>청계천 광장시장과 힙지로에서 저녁...</option>
         <option>연희동 도자기공방과 인기 카페...</option>
     </select>
-    <form method="post" action="/submit-dates">
+
+    <label class="ongoing-date-label" for="ongoing-date">
+        <span>진행일 선택</span>
+        <span style="font-size: 14px; color:#24A0ED">
+            <img src="/static/image/host/init.svg" alt="초기화">
+            초기화
+        </span>
+    </label>
+
+    <form method="post" action="/submit-dates" id="ongoing-date">
         <div class="calendar">
             <div class="calendar-header">
                 <button type="button" id="prev-month">&lt;</button>

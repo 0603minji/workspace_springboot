@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aside</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            min-width: 390px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 20px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center; /* 텍스트를 가운데 정렬 */
+            align-items: center;
+            position: relative; /* 버튼 위치 조정을 위해 relative로 설정 */
+            margin-bottom: 10px;
+        }
+
+        .title button {
+            position: absolute; /* 버튼을 절대 위치로 설정 */
+            right: 0; /* 오른쪽 정렬 */
+            background: none; /* 배경 제거 */
+            border: none; /* 테두리 제거 */
+            cursor: pointer; /* 클릭 가능한 커서 */
+        }
+
+        .title button img {
+            width: 20px; /* 원하는 이미지 크기로 조정 */
+            height: 20px; /* 원하는 이미지 크기로 조정 */
+        }
+
+        .reservations {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reserved-guest {
+            display: flex; /* flexbox를 사용하여 정렬 */
+            align-items: center; /* 세로 정렬 */
+            padding: 10px 0;
+        }
+
+        .reserved-guest-header {
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 100px;
+            font-size: 14px;
+            color: #6B7A8D;
+            border-bottom: 1px solid #6B7A8D;
+        }
+
+        .reserved-guest-header .action {
+            display: flex;
+            gap: 20px; /* 각 항목 사이의 간격 */
+        }
+
+        .select-chat-reject {
+            margin-left: auto; /* flexbox를 사용하여 오른쪽으로 정렬 */
+            display: flex; /* 액션 아이콘을 flexbox로 정렬 */
+        }
+
+        .chat-all {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 14px;
+            color: #6B7A8D;
+        }
+
+        .chat-all img {
+            margin-right: 10px;
+            color: #9DA7B3;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="title">
+        예약자
+        <button><img src="/static/image/host/close.svg" alt="닫기"></button>
+    </div>
+    <div>
+
+    </div>
+    <ul class="reservations">
+        <li class="reserved-guest-header">
+            <span>게스트 정보</span>
+            <div class="action">
+                <span>1:1 Chat</span>
+                <span>추방</span>
+            </div>
+        </li>
+
+        <li class="reserved-guest">
+            <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
+            <div>
+                <span style="font-size: 16px">예약자 1 닉네임</span><br>
+                <span style="font-size: 14px">jasmin01@gmail.com</span>
+            </div>
+            <div class="select-chat-reject">
+                <img src="/static/image/host/chat.svg" alt="chat" style="margin-right: 30px">
+                <img src="/static/image/host/reject.svg" alt="reject reserved guest">
+            </div>
+        </li>
+
+        <li class="reserved-guest">
+            <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
+            <div>
+                <span style="font-size: 16px">예약자 2 닉네임</span><br>
+                <span style="font-size: 14px">jasmin02@gmail.com</span>
+            </div>
+            <div class="select-chat-reject">
+                <img src="/static/image/host/chat.svg" alt="chat" style="margin-right: 30px">
+                <img src="/static/image/host/reject.svg" alt="reject reserved guest">
+            </div>
+        </li>
+
+        <li class="reserved-guest">
+            <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
+            <div>
+                <span style="font-size: 16px">예약자 3 닉네임</span><br>
+                <span style="font-size: 14px">jasmin03@gmail.com</span>
+            </div>
+            <div class="select-chat-reject">
+                <img src="/static/image/host/chat.svg" alt="chat" style="margin-right: 30px">
+                <img src="/static/image/host/reject.svg" alt="reject reserved guest">
+            </div>
+        </li>
+
+        <li class="reserved-guest">
+            <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
+            <div>
+                <span style="font-size: 16px">예약자 4 닉네임</span><br>
+                <span style="font-size: 14px">jasmin04@gmail.com</span>
+            </div>
+            <div class="select-chat-reject">
+                <img src="/static/image/host/chat-updated.svg" alt="chat-updated" style="margin-right: 30px">
+                <img src="/static/image/host/reject.svg" alt="reject reserved guest">
+            </div>
+        </li>
+    </ul>
+
+    <div class="chat-all">
+        <img src="/static/image/host/chat-all.svg" alt="chat-all">전체 Chat
+    </div>
+</div>
+</body>
+</html>
