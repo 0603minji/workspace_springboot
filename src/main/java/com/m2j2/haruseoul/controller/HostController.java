@@ -38,4 +38,11 @@ public class HostController {
     public String image() {
         return "host/create/image";
     }
+
+    @GetMapping("reservation/list")
+    public String list() {
+        return "host/reservation/list";
+    }
+
+
 }
