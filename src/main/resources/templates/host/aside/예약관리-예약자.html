@@ -95,77 +95,62 @@
 
 <body>
 
-<section class="container">
+<aside class="container">
     <header>
-        <h1 class="title">
-            예약자
-            <button onclick="closeModal()"><img src="/static/image/host/close.svg" alt="닫기"></button>
-        </h1>
+        <h1 class="title">예약자</h1>
+        <button onclick="closeModal()"><img src="/image/host/close.svg" alt="닫기"></button>
     </header>
 
-    <main>
-        <label class="reserved-guest-header" for="reserved-guest">
-            <span>게스트 정보</span>
-            <div class="action">
-                <span>1:1 Chat</span>
-                <span>추방</span>
-            </div>
-        </label>
-        <ul class="reservations" id="reserved-guest">
-            <li class="reserved-guest">
-                <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
+
+    <div>
+        <span>게스트 정보</span>
+        <span>1:1 Chat</span>
+        <span>추방</span>
+    </div>
+
+    <ul class="reservations" id="reserved-guest">
+        <li class="reserved-guest">
+            <div>
+                <div>
+                    <img src="/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
+                </div>
                 <div>
                     <span style="font-size: 16px">예약자 1 닉네임</span><br>
                     <span style="font-size: 14px">jasmin01@gmail.com</span>
                 </div>
-                <div class="select-chat-reject">
-                    <img src="/static/image/host/chat.svg" alt="chat" style="margin-right: 30px">
-                    <img src="/static/image/host/reject.svg" alt="reject reserved guest">
-                </div>
-            </li>
+            </div>
 
-            <li class="reserved-guest">
-                <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
+            <div class="select-chat-reject">
+                <a href=""><img src="/image/host/chat.svg" alt="chat" style="margin-right: 30px"></a>
+            </div>
+            <div>
+                <a href=""><img src="/image/host/reject.svg" alt="reject reserved guest"></a>
+            </div>
+        </li>
+
+        <li class="reserved-guest">
+            <div>
                 <div>
-                    <span style="font-size: 16px">예약자 2 닉네임</span><br>
-                    <span style="font-size: 14px">jasmin02@gmail.com</span>
+                    <img src="/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
                 </div>
-                <div class="select-chat-reject">
-                    <img src="/static/image/host/chat.svg" alt="chat" style="margin-right: 30px">
-                    <img src="/static/image/host/reject.svg" alt="reject reserved guest">
-                </div>
-            </li>
-
-            <li class="reserved-guest">
-                <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
                 <div>
-                    <span style="font-size: 16px">예약자 3 닉네임</span><br>
-                    <span style="font-size: 14px">jasmin03@gmail.com</span>
+                    <span style="font-size: 16px">예약자 1 닉네임</span><br>
+                    <span style="font-size: 14px">jasmin01@gmail.com</span>
                 </div>
-                <div class="select-chat-reject">
-                    <img src="/static/image/host/chat.svg" alt="chat" style="margin-right: 30px">
-                    <img src="/static/image/host/reject.svg" alt="reject reserved guest">
-                </div>
-            </li>
+            </div>
 
-            <li class="reserved-guest">
-                <img src="/static/image/host/guest-profileimg.svg" alt="guest profile image" style="margin-right: 20px">
-                <div>
-                    <span style="font-size: 16px">예약자 4 닉네임</span><br>
-                    <span style="font-size: 14px">jasmin04@gmail.com</span>
-                </div>
-                <div class="select-chat-reject">
-                    <img src="/static/image/host/chat-updated.svg" alt="chat-updated" style="margin-right: 30px">
-                    <img src="/static/image/host/reject.svg" alt="reject reserved guest">
-                </div>
-            </li>
-        </ul>
+            <div class="select-chat-reject">
+                <a href=""><img src="/image/host/chat.svg" alt="chat" style="margin-right: 30px"></a>
+            </div>
+            <div>
+                <a href=""><img src="/image/host/reject.svg" alt="reject reserved guest"></a>
+            </div>
+        </li>
+    </ul>
 
-        <div class="chat-all">
-            <img src="/static/image/host/chat-all.svg" alt="chat-all">전체 Chat
-        </div>
-
-    </main>
-</section>
+    <div class="chat-all">
+        <a><img src="/image/host/chat-all.svg" alt="chat-all">전체 Chat</a>
+    </div>
+</aside>
 </body>
 </html>
