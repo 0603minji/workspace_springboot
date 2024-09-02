@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{inc/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host 예약 관리</title>
+    <style>
+        /*#1 */
+        @import url('https://fonts.googleapis.com/css2?family=Open%20Sans:wght@400;500;600&display=swap');
+
+        /*#2 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /*#3 */
+        button {
+            /* button 요소에 기본적으로 설정되는 스타일 속성 초기화 */
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        /*#4 */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /*#5 */
+        .wrapper {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /*#6*/
+        .wrapper .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .wrapper .header .current-date {
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        .wrapper .header button {
+            width: 38px;
+            height: 38px;
+            font-size: 30px;
+            color: #0C0C0C;
+        }
+
+        /*#7*/
+        .calendar ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .calendar .weeks li {
+            font-weight: 500;
+        }
+
+        .calendar .days {
+            margin-bottom: 20px;
+        }
+
+        .calendar ul li {
+            /*#8*/
+            width: calc(100% / 7);
+            /*#9*/
+            position: relative;
+        }
+
+        .calendar .days li {
+            /*#10*/
+            z-index: 1;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        /*#11*/
+        .days li.inactive {
+            color: #aaa;
+        }
+
+        .days li.active {
+            color: #fff;
+        }
+
+        .days li:hover::before {
+            background: #f2f2f2;
+        }
+
+        .days li.active::before {
+            background: #008aff;
+        }
+
+        .sunday {
+            color: #F24A16;
+        }
+
+        .saturday {
+            color: #0594FC;
+        }
+    </style>
+</head>
+
+<body>
+    <main layout:fragment="main" class="wrapper">
+
+        <section>
+            <!--    예약 관리           +일정추가-->
+            <header>
+                <h1>예약관리</h1>
+                <div>
+                    <a href="">일정 추가</a>
+                </div>
+            </header>
+
+            <!--모집 중, 예약 확정, 폐지 임박, 종료, 폐지, 필터-->
+            <section>
+                <h1>필터</h1>
+                <!--모집 중, 예약 확정, 폐지 임박, 종료, 폐지-->
+
+                <ul>
+                    <li><a href="?status=active">모집 중</a></li>
+                    <li><a href="?status=confirmed">예약 확정</a></li>
+                    <li><a href="?status=impending">폐지 임박</a></li>
+                    <li><a href="?status=finished">종료</a></li>
+                    <li><a href="?status=canceled">폐지</a></li>
+                </ul>
+
+
+                <!--필터 아이콘-- margin left: auto>-->
+                <div>
+                    <a href="">필터</a>
+                </div>
+            </section>
+
+            <!--목록-->
+            <section>
+                <header>
+                    <h1>검색결과</h1>
+                    <!--23 results         캘린더로 보기-->
+                    <div>23 Results</div>
+                    <!--<div th:text="${result.size} + 'Results'">23 Results</div>-->
+                    <div><a href="?view=calendar">캘린더로 보기</a></div>
+                </header>
+
+                <section class="wrapper">
+                    <h1>2024년 달력</h1>
+
+                    <div class="header">
+                        <a href="" class="material-icons"> 〈 </a>
+                        <p class="current-date">September 2024</p>
+                        <a href="" class="material-icons"> 〉 </a>
+                    </div>
+
+                    <div class="calendar">
+                        <ul class="weeks">
+                            <li class="sunday">SUN</li>
+                            <li>MON</li>
+                            <li>TUE</li>
+                            <li>WED</li>
+                            <li>THU</li>
+                            <li>FRI</li>
+                            <li class="saturday">SAT</li>
+                        </ul>
+
+                        <ul>
+                            <li class="sunday">
+                                <p>1</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>2</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>3</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>4</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>5</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>6</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li class="saturday">
+                                <p>7</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="sunday">
+                                <p>8</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>9</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>10</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>11</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>12</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>13</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li class="saturday">
+                                <p>14</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="sunday">
+                                <p>15</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>16</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>17</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>18</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>19</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>20</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li class="saturday">
+                                <p>21</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="sunday">
+                                <p>22</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>23</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>24</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>25</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>26</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>27</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li class="saturday">
+                                <p>28</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                        </ul>
+
+                        <ul>
+                            <li class="sunday">
+                                <p>29</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p>30</p>
+                                <div><a href="">프로그램 내용</a></div>
+                            </li>
+                            <li>
+                                <p></p>
+                                <div><a href=""></a></div>
+                            </li>
+                            <li>
+                                <p></p>
+                                <div><a href=""></a></div>
+                            </li>
+                            <li>
+                                <p></p>
+                                <div><a href=""></a></div>
+                            </li>
+                            <li>
+                                <p></p>
+                                <div><a href=""></a></div>
+                            </li>
+                            <li class="saturday">
+                                <p></p>
+                                <div><a href=""></a></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        
+                <!--예약 카드-->
+                <li>
+                    <!--(모집 중) (폐지 임박)           (똥똥똥)-->
+                    <div>
+                        <!--(모집 중) (폐지 임박)-->
+                        <div>모집 중</div>
+                        <div>폐지 임박</div>
+
+                        <!--똥똥똥-->
+                        <div><a href="">똥똥똥 아이콘</a></div>
+                        <ul>
+                            <li><a href="">추가 개설</a></li> <!--추가개설 팝업-->
+                            <li><a href="">확정</a></li><!--post요청?-->
+                            <li><a href="">폐지</a></li><!--post요청?-->
+                        </ul>
+                    </div>
+
+                    <!--(사진) (제목, (진행일, d-day))-->
+                    <div>
+                        <!--사진-->
+                        <div>
+                            <a href="">
+                                <img src="" alt="대표사진">
+                            </a>
+                        </div>
+
+                        <!--(제목) (진행일, d-day)-->
+                        <div>
+                            <!--제목-->
+                            <p><a href="">Seoul: Private Customizable City HighLights Tour</a></p>
+
+                            <!--(진행일, d-day)-->
+                            <div>
+                                <p>24.9.1 Sun</p>
+                                <div>D-4</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--(참가자들 프사) (신청인원)-->
+                    <div>
+                        <!--참가자들 프사-->
+                        <div>
+                            <a href=""><!--예약자 팝업-->
+                                <ul>
+                                    <li><img src="" alt="참가자1"></li>
+                                    <li><img src="" alt="참가자2"></li>
+                                    <li><img src="" alt="참가자3"></li>
+                                </ul>
+                            </a>
+                        </div>
+
+                        <!--신청인원-->
+                        <div>
+                            <span>3</span>
+                            <span>/ 5</span>
+                        </div>
+                    </div>
+                </li>       
+        </section>
+
+    </section>
+    </main>
+</body>
+
+</html>
