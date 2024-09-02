@@ -43,6 +43,7 @@ public class HostController {
     public String schedule() {
         return "host/create/schedule";
     }
+
     @GetMapping("program/list")
     public String list() {
         return "host/program/list";
