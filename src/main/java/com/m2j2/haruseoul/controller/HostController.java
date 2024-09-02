@@ -39,6 +39,12 @@ public class HostController {
         return "host/create/image";
     }
 
+    @GetMapping("reservation/list")
+    public String list() {
+        return "host/reservation/list";
+    }
+
+
     @GetMapping("create/schedule")
     public String schedule() {
         return "host/create/schedule";
@@ -48,5 +54,6 @@ public class HostController {
     public String list() {
         return "host/program/list";
     }
+
 
 }
