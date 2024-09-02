@@ -174,20 +174,31 @@
 
 <body>
 
-<div class="container">
-    <div class="title">개설하기
-        <button onclick="closeModal()">
-            <img src="/static/image/host/close.svg" alt="닫기">
-        </button>
-    </div>
-    <label class="program-label" for="program">프로그램</label>
-    <select id="program" class="program-select">
-        <option>한복입고 북촌 인기 카페...</option>
-        <option>청계천 광장시장과 힙지로에서 저녁...</option>
-        <option>연희동 도자기공방과 인기 카페...</option>
-    </select>
+<section class="container">
+
+    <header>
+        <h1 class="title">개설하기
+            <button onclick="closeModal()">
+                <img src="/static/image/host/close.svg" alt="닫기">
+            </button>
+        </h1>
+    </header>
+
+    <section>
+        <h1>
+            <label class="program-label" for="program">프로그램</label>
+        </h1>
+        <select id="program" class="program-select">
+            <option>한복입고 북촌 인기 카페...</option>
+            <option>청계천 광장시장과 힙지로에서 저녁...</option>
+            <option>연희동 도자기공방과 인기 카페...</option>
+        </select>
+    </section>
+
     <form method="post" action="/submit-dates">
-        <div class="calendar">
+        <section class="calendar">
+            <h1 style="display: none">캘린더</h1>
+
             <div class="calendar-header">
                 <button type="button" id="prev-month">&lt;</button>
                 <div class="calendar-month">
@@ -196,8 +207,9 @@
                 </div>
                 <button type="button" id="next-month">&gt;</button>
             </div>
-            <div class="calendar-days">
-                <!-- 요일 헤더 -->
+
+            <section class="calendar-days">
+                <h1 style="display: none">요일</h1>
                 <div class="weekday">Mo</div>
                 <div class="weekday">Tu</div>
                 <div class="weekday">We</div>
@@ -206,7 +218,6 @@
                 <div class="weekday">Sa</div>
                 <div class="weekday">Su</div>
 
-                <!-- 날짜 셀들 -->
                 <!-- 첫째 주 -->
                 <div class="day"><input type="checkbox" id="day-29" disabled><label class="disabled"
                                                                                     for="day-29">29</label></div>
@@ -256,18 +267,17 @@
                 <div class="day"><input type="checkbox" id="day-25"><label for="day-25">25</label></div>
 
                 <div class="day"><input type="checkbox" id="day-26"><label for="day-26">26</label></div>
-                <div class="day"><input type="checkbox" id="day-27" disabled><label class="disabled"
-                                                                                    for="day-27">27</label></div>
+                <div class="day"><input type="checkbox" id="day-27" disabled><label class="disabled" for="day-27">27</label></div>
                 <div class="day"><input type="checkbox" id="day-28"><label for="day-28">28</label></div>
                 <div class="day"><input type="checkbox" id="day-29-alt"><label for="day-29-alt">29</label></div>
                 <div class="day"><input type="checkbox" id="day-30-alt"><label for="day-30-alt">30</label></div>
-                <div class="day"><input type="checkbox" id="day-31-alt" disabled><label class="disabled"
-                                                                                        for="day-31-alt">31</label>
-                </div>
-            </div>
-        </div>
+                <div class="day"><input type="checkbox" id="day-31-alt" disabled><label class="disabled" for="day-31-alt">31</label></div>
+            </section>
+        </section>
+
         <button type="submit" class="confirm-btn">확인</button>
+
     </form>
-</div>
+</section>
 </body>
 </html>
