@@ -44,6 +44,9 @@ public class HostController {
         return "host/reservation/list";
     }
 
+    @GetMapping("reservation/calender")
+    public String calender() {
+        return "host/reservation/calender";
 
     @GetMapping("create/schedule")
     public String schedule() {
