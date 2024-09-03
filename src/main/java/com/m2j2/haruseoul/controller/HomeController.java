@@ -21,8 +21,5 @@ public class HomeController {
         return "inc/aside-host";
     }
 
-    @GetMapping("/home")
-    public String home() {
-        return "host/home";
-    }
+
 }
