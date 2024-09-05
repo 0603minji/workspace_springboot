@@ -1,0 +1,180 @@
+main {
+    padding-top: 0;
+    padding-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main h1 {
+    display: none;
+}
+.container-wrapper {
+    min-width: 393px;
+    max-width: 100%;
+    margin: 30px 20px;
+}
+.container-wrapper h1{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color : black;
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #6B7A8D;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.photo-box {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    background-color: #CED3D9;
+    border: 1px solid #092241;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+span {
+    background-color: #092241;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    height: 8px;
+    width: 24px;
+}
+
+.number {
+    background-color: white;
+    color: #092241;
+    padding: 5px 20px;
+    border: 1px solid #092241;
+    border-radius: 100px;
+    font-size: 12px;
+    height: 8px;
+    width: 24px;
+}
+.upload-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    /*gap: 20px; !* Space between the two buttons *!*/
+}
+.file-upload {
+    background-color: #249AE4; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 180px;
+}
+.upload-button {
+    background-color: #249AE4; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 180px;
+}
+.upload-button:hover {
+    background-color: #7CC6F4;
+}
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.action-buttons h1{
+    display: none;
+}
+
+.action-buttons button {
+    background-color: #092241; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색상 */
+    border: none;
+    border-radius: 10px; /* 버튼 모서리를 둥글게 */
+    padding: 10px 10px; /* 버튼의 패딩 */
+    font-size: 14px; /* 버튼 텍스트 크기 */
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.action-buttons button:hover {
+    background-color: #064073; /* 버튼 호버 시 배경색 */
+}
+
+fieldset {
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 30px;
+    }
+
+/* menu-tab 스타일 */
+.menu-tab {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; /* 탭들이 하단에 정렬되도록 설정 */
+    gap: 5px;
+    width: 100%; /* 전체 화면 너비로 설정 */
+    height: 40px; /* 탭 높이 조정 */
+    border-bottom: 1px solid #092241; /* 메뉴탭 전체 하단의 선 */
+    z-index: 1;
+    justify-content: space-around; /* 각 탭 사이의 간격을 균등하게 분배 */
+    padding: 0;
+}
+.menu-tab h1{
+    display: none;
+}
+/* 각 탭의 스타일 */
+.menu-tab-item {
+    padding: 8px 12px; /* 패딩 조정 */
+    border: 1px solid #092241;
+    border-bottom: none; /* 밑줄 제거 */
+    text-align: center;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #092241;
+    text-decoration: none; /* 링크 스타일 제거 */
+    border-radius: 8px 8px 0 0; /* 윗부분을 둥글게 설정 */
+    margin-bottom: -1px; /* 공백을 없애기 위해 아래 마진을 음수로 설정 */
+}
+
+/* 활성화된 탭 스타일 */
+.menu-tab-item.active {
+    background-color: #092241;
+    color: #FFFFFF;
+    border-bottom: 1px solid #092241; /* 활성화된 탭 하단의 경계선, 메뉴탭 하단의 선과 동일한 색상으로 설정 */
+}

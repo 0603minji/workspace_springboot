@@ -1,0 +1,21 @@
+.footer {
+    background-color: #3A4E67;
+    color: #FFFFFF;
+    padding: 30px 20px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav h1{
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{inc/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>예약관리</title>
+</head>
+<body>
+
+<main layout:fragment="main">
+
+    <section>
+        <!--    예약 관리           +일정추가-->
+        <header>
+            <h1>예약관리</h1>
+            <div>
+                <a href="">일정 추가</a>
+            </div>
+        </header>
+
+        <!--모집 중, 예약 확정, 폐지 임박, 종료, 폐지, 필터-->
+        <section>
+            <h1>필터</h1>
+            <!--모집 중, 예약 확정, 폐지 임박, 종료, 폐지-->
+
+            <ul>
+                <li><a href="?status=active">모집 중</a></li>
+                <li><a href="?status=confirmed">예약 확정</a></li>
+                <li><a href="?status=impending">폐지 임박</a></li>
+                <li><a href="?status=finished">종료</a></li>
+                <li><a href="?status=canceled">폐지</a></li>
+            </ul>
+
+
+            <!--필터 아이콘-- margin left: auto>-->
+            <div>
+                <a href="">필터</a>
+            </div>
+        </section>
+
+        <!--목록-->
+        <section>
+            <header>
+                <h1>검색결과</h1>
+                <!--23 results         캘린더로 보기-->
+                <div>23 Results</div>
+                <!--<div th:text="${result.size} + 'Results'">23 Results</div>-->
+                <div><a href="?view=calendar">캘린더로 보기</a></div>
+            </header>
+
+            <!--예약 카드 목록.
+            (모집 중) (예약 확정) (폐지 임박)-->
+            <ul>
+                <!--예약 카드-->
+                <li>
+                    <!--(모집 중) (폐지 임박)           (똥똥똥)-->
+                    <div>
+
+                        <!--(모집 중) (폐지 임박)-->
+                        <div>모집 중</div>
+                        <div>폐지 임박</div>
+
+                        <!--똥똥똥-->
+                        <div><a href="">똥똥똥 아이콘</a></div>
+                        <ul>
+                            <li><a href="">추가 개설</a></li> <!--추가개설 팝업-->
+                            <li><a href="">확정</a></li><!--post요청?-->
+                            <li><a href="">폐지</a></li><!--post요청?-->
+                        </ul>
+                    </div>
+
+                    <!--(사진) (제목, (진행일, d-day))-->
+                    <div>
+                        <!--사진-->
+                        <div>
+                            <a href="">
+                                <img src="" alt="대표사진">
+                            </a>
+                        </div>
+
+                        <!--(제목) (진행일, d-day)-->
+                        <div>
+                            <!--제목-->
+                            <p><a href="">Seoul: Private Customizable City HighLights Tour</a></p>
+
+                            <!--(진행일, d-day)-->
+                            <div>
+                                <p>24.9.1 Sun</p>
+                                <div>D-4</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--(참가자들 프사) (신청인원)-->
+                    <div>
+                        <!--참가자들 프사-->
+                        <div>
+                            <a href=""><!--예약자 팝업-->
+                                <ul>
+                                    <li><img src="" alt="참가자1"></li>
+                                    <li><img src="" alt="참가자2"></li>
+                                    <li><img src="" alt="참가자3"></li>
+                                </ul>
+                            </a>
+                        </div>
+
+                        <!--신청인원-->
+                        <div>
+                            <span>3</span>
+                            <span>/ 5</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <!--예약 카드 목록.
+            (종료) (폐지)-->
+            <ul>
+                <!--예약 카드-->
+                <li>
+
+                    <!--(종료)           (똥똥똥)-->
+                    <div>
+                        <!--(종료)-->
+                        <div>종료</div>
+
+                        <!--똥똥똥-->
+                        <div><a href="">똥똥똥 아이콘</a></div>
+                        <ul>
+                            <li><a href="">추가 개설</a></li> <!--추가개설 팝업-->
+                        </ul>
+                    </div>
+
+                    <!--(사진) (제목, 진행일)-->
+                    <div>
+                        <!--사진-->
+                        <div>
+                            <a href="">
+                                <img src="" alt="대표사진">
+                            </a>
+                        </div>
+
+                        <!--(제목) (진행일)-->
+                        <div>
+                            <!--제목-->
+                            <p><a>Seoul: Private Customizable City HighLights Tour</a></p>
+
+                            <!--진행일-->
+                            <div>
+                                <p>24.9.1 Sun</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--(참가자들 프사) (신청인원)-->
+                    <div>
+                        <!--참가자들 프사-->
+                        <div>
+                            <a href=""><!--예약자 팝업-->
+                                <ul>
+                                    <li><img src="" alt="참가자1"></li>
+                                    <li><img src="" alt="참가자2"></li>
+                                    <li><img src="" alt="참가자3"></li>
+                                </ul>
+                            </a>
+                        </div>
+
+                        <!--신청인원-->
+                        <div>
+                            <span>3</span>
+                            <span>/ 5</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+        </section>
+
+    </section>
+
+</main>
+
+</body>
+</html>

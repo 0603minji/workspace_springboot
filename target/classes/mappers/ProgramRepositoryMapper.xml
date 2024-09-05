@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.m2j2.haruseoul.repository.ProgramRepository.ProgramRepository">
+
+    <select id="findAll" resultType="ProgramView">
+        SELECT p.TITLE, p.ID, p.CATEGORY1, p.CATEGORY2, p.STATUS, i.FILE_NAME AS THUMBNAIL
+        FROM
+        (SELECT * FROM PROGRAM WHERE HOST_ID=  #{hostId}) p
+        LEFT JOIN
+        (SELECT FILE_NAME, PROGRAM_ID FROM IMAGE WHERE "ORDER"=1) i
+        ON p.ID = i.PROGRAM_ID
+    </select>
+</mapper>
