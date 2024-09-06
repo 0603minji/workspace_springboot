@@ -17,6 +17,6 @@ mybatis:
     map-underscore-to-camel-case: true
   mapper-locations: mappers/*Mapper.xml
   type-aliases-package: com.m2j2.haruseoul.entity
-  logging:
-    level:
-      com.m2j2.haruseoul.repository: trace
+logging:
+  level:
+    com.m2j2.haruseoul.repository.ProgramRepository: trace

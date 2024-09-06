@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ProgramService {
 
-    List<ProgramView> getList(long hostId);
+    List<ProgramView> getList(long hostId, List<String> categories);
 }

@@ -53,12 +53,15 @@ public class ProgramController {;
     @GetMapping("list")
     public String list(
             @RequestParam(value = "hostId",required = false) long hostId,
+            @RequestParam(value = "category", required = false) List<String> categories,
             Model model) {
-        List<ProgramView> programs = programService.getList(hostId);
+        List<ProgramView> programs = programService.getList(hostId, categories);
 
+        System.out.println(categories);
         System.out.println(programs);
 
         model.addAttribute("programs", programs);
+        model.addAttribute("hostId", hostId);
         return "host/program/list";
     }
 

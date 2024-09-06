@@ -14,8 +14,8 @@ public class DefaultProgramService implements ProgramService {
     ProgramRepository programRepository;
 
     @Override
-    public List<ProgramView> getList(long hostId) {
-        List<ProgramView> programs = programRepository.findAll(hostId);
+    public List<ProgramView> getList(long hostId, List<String> categories) {
+        List<ProgramView> programs = programRepository.findAll(hostId, categories);
         return programs;
     }
 }

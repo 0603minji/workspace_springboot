@@ -21,6 +21,33 @@
             <li><a href="">프로그램 상태</a></li>
             <li><a href=""><img src="" alt="초기화버튼">초기화</a></li>
         </ul>
+        <section class="container">
+            <header>
+                <h1 class="title">
+                    필터
+                </h1>
+                <button onclick="closeModal()"><img src="/image/host/close.svg" alt="닫기"></button>
+            </header>
+            <aside>
+                <header>
+                    <h1 class="program-label" for="category">
+                        카테고리
+                    </h1>
+                    <div style="font-size: 14px; color:#24A0ED"><img src="/image/host/init.svg" alt="초기화">초기화</div>
+                </header>
+                <form>
+                    <input type="hidden" name="hostId" th:value="${hostId}">
+                    <ul class="category-checkboxes" id="category">
+                        <li><label><input type="checkbox" name="category" value="Activity"> Activity</label></li>
+                        <li><label><input type="checkbox" name="category" value="Culture"> Culture</label></li>
+                        <li><label><input type="checkbox" name="category" value="Shopping"> Shopping</label></li>
+                        <li><label><input type="checkbox" name="category" value="Food"> Food</label></li>
+                        <li><label><input type="checkbox" name="category" value="Nature"> Nature</label></li>
+                    </ul>
+                    <button type="submit" class="confirm-btn">확인</button>
+                </form>
+            </aside>
+        </section>
     </nav>
     <div>
         <p>Results</p>
