@@ -21,30 +21,28 @@
             <li><a href="">프로그램 상태</a></li>
             <li><a href=""><img src="" alt="초기화버튼">초기화</a></li>
         </ul>
-        <section class="container">
+        <section>
             <header>
-                <h1 class="title">
-                    필터
-                </h1>
+                <h1>필터</h1>
                 <button onclick="closeModal()"><img src="/image/host/close.svg" alt="닫기"></button>
             </header>
             <aside>
                 <header>
-                    <h1 class="program-label" for="category">
+                    <h1>
                         카테고리
                     </h1>
-                    <div style="font-size: 14px; color:#24A0ED"><img src="/image/host/init.svg" alt="초기화">초기화</div>
+                    <div><img src="/image/host/init.svg" alt="초기화">초기화</div>
                 </header>
                 <form>
                     <input type="hidden" name="hostId" th:value="${hostId}">
-                    <ul class="category-checkboxes" id="category">
+                    <ul>
                         <li><label><input type="checkbox" name="category" value="Activity"> Activity</label></li>
                         <li><label><input type="checkbox" name="category" value="Culture"> Culture</label></li>
                         <li><label><input type="checkbox" name="category" value="Shopping"> Shopping</label></li>
                         <li><label><input type="checkbox" name="category" value="Food"> Food</label></li>
                         <li><label><input type="checkbox" name="category" value="Nature"> Nature</label></li>
                     </ul>
-                    <button type="submit" class="confirm-btn">확인</button>
+                    <button type="submit">확인</button>
                 </form>
             </aside>
         </section>
@@ -89,14 +87,14 @@
             <li>
                 <div style="display: flex">
                     <p>작성중</p>
-                    <button class="more-button"><img src="" alt="똥똥똥"></button>
-                    <div class="more-menu">
+                    <button><img src="" alt="똥똥똥"></button>
+                    <div>
                         <a href="#">수정</a>
                         <a href="#">삭제</a>
                         <a href="#">복제</a>
                     </div>
                 </div>
-                <div style="display: flex" th:each="p:${programs}">
+                <div th:each="p:${programs}">
                     <div>
                         <a href=""><img src="" alt="메인이미지" th:src="@{/image/{img}(img=${p.thumbnail})}"></a>
                     </div>
