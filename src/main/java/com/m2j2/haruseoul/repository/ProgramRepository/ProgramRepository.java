@@ -9,5 +9,5 @@ import java.util.List;
 public interface ProgramRepository {
 
     // host/program/list의 카드에 담을 필드들
-    List<ProgramView> findAll(long hostId, List<String> categories);
+    List<ProgramView> findAll(Long hostId, List<String> categories);
 }

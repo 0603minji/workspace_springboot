@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Program {
-    private long id;
+    private Long id;
     private String title;
     private String summary;
     private String detail;
@@ -20,8 +20,8 @@ public class Program {
     private String startTime;
     private String endTime;
     private String status;
-    private int price;
-    private int groupSizeMax;
-    private int groupSizeMin;
-    private long hostId;
+    private Integer price;
+    private Integer groupSizeMax;
+    private Integer groupSizeMin;
+    private Long hostId;
 }

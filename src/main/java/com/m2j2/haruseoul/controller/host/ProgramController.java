@@ -52,7 +52,7 @@ public class ProgramController {;
 
     @GetMapping("list")
     public String list(
-            @RequestParam(value = "hostId",required = false) long hostId,
+            @RequestParam(value = "hostId",required = true) Long hostId,
             @RequestParam(value = "category", required = false) List<String> categories,
             Model model) {
         List<ProgramView> programs = programService.getList(hostId, categories);

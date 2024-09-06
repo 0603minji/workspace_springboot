@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class ProgramView {
-    private long id;
+    private Long id;
     private String title;
     private String category1;
     private String category2;
