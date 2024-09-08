@@ -36,7 +36,7 @@
                 <form>
                     <input type="hidden" name="hostId" th:value="${hostId}">
                     <ul>
-                        <li><label><input type="checkbox" name="category" value="Activity"> Activity</label></li>
+                        <li><label><input type="checkbox" name="category" value="Activity" > Activity</label></li>
                         <li><label><input type="checkbox" name="category" value="Culture"> Culture</label></li>
                         <li><label><input type="checkbox" name="category" value="Shopping"> Shopping</label></li>
                         <li><label><input type="checkbox" name="category" value="Food"> Food</label></li>
@@ -48,7 +48,7 @@
         </section>
     </nav>
     <div>
-        <p>Results</p>
+        <p th:text="${#lists.size(programs)}">
         <button type="button" id="sortButton">
             <img src="" alt="정렬 아이콘" id="sortIcon">
         </button>
@@ -94,7 +94,7 @@
                         <a href="#">복제</a>
                     </div>
                 </div>
-                <div th:each="p:${programs}">
+                <div th:each="p:${programs}" style="border: 1px solid black">
                     <div>
                         <a href=""><img src="" alt="메인이미지" th:src="@{/image/{img}(img=${p.thumbnail})}"></a>
                     </div>

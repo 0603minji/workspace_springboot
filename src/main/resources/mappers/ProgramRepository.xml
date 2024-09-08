@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.m2j2.haruseoul.repository.host.ProgramRepositorySample">
+
+    <resultMap id="ProgramView" type="com.m2j2.haruseoul.entity.ProgramView">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="category1" property="category1"/>
+        <result column="category2" property="category2"/>
+        <result column="status" property="status"/>
+        <result column="thumbnail" property="thumbnail"/>
+    </resultMap>
+
+    <select id="findAll" resultType="ProgramView">
+        select *
+        from PROGRAM p
+        left join (select * from IMAGE where "ORDER"=1) i
+        on p.ID = i.PROGRAM_ID
+    </select>
+
+    <select id="findByCategory" parameterType="String" resultType="ProgramView">
+        SELECT id, title, catogry1, category2, status, thumbnail
+        from PROGRAM p
+        WHERE CATEGORY1 IN
+        <foreach collection="categories" item="category" open="(" separator="," close=")">
+            #{category}
+        </foreach>
+        OR
+        CATEGORY2 IN
+        <foreach collection="categories" item="category" open="(" separator="," close=")">
+            #{category}
+        </foreach>
+    </select>
+</mapper>
