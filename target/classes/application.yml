@@ -15,7 +15,7 @@ server:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-  mapper-locations: mappers/*Mapper.xml
+  mapper-locations: mappers/*.xml
   type-aliases-package: com.m2j2.haruseoul.entity
 logging:
   level:
