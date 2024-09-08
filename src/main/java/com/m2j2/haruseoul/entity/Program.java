@@ -24,4 +24,24 @@ public class Program {
     private Integer groupSizeMax;
     private Integer groupSizeMin;
     private Long hostId;
+
+    @Override
+    public String toString() {
+        return "Program{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", summary='" + summary + '\'' +
+                ", detail='" + detail + '\'' +
+                ", category1='" + category1 + '\'' +
+                ", category2='" + category2 + '\'' +
+                ", language='" + language + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", status='" + status + '\'' +
+                ", price=" + price +
+                ", groupSizeMax=" + groupSizeMax +
+                ", groupSizeMin=" + groupSizeMin +
+                ", hostId=" + hostId +
+                '}';
+    }
 }

@@ -1,5 +1,7 @@
 package com.m2j2.haruseoul.controller.host;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.m2j2.haruseoul.entity.Program;
 import com.m2j2.haruseoul.entity.ProgramView;
 import com.m2j2.haruseoul.service.host.ProgramService;
@@ -19,10 +21,8 @@ public class ProgramController {
     @Autowired
     private ProgramService programService;
 
-    @GetMapping("info/create")
-    public String info() {
-        return "host/program/create/info";
-    }
+
+
 
     @GetMapping("parties/create")
     public String parties() {
@@ -49,7 +49,33 @@ public class ProgramController {
         return "host/program/create/schedule";
     }
 
-    @GetMapping("/list")
+    //@RequestParam => GET 매핑의 쿼리 스트링만 매칭해줘
+    //?키=VALUE&키=VALUE
+
+    @PostMapping("parties/create")
+    public String createProgram(
+            //파라미터 받기
+            @RequestBody Program program,
+            Model model) {
+
+        if(program.getHostId() == null) {
+            System.out.println("hostId가 없어 이거 잘못됐어!!");
+            throw new RuntimeException();
+        }
+        if(program.getTitle() ==  null || program.getTitle().isEmpty()){
+            System.out.println("getTitle가 없어 이거 잘못됐어!!");
+            throw new RuntimeException();
+        }
+
+
+        System.out.println(program);
+        String endingMessage = programService.saveProgram(program);
+        System.out.println(endingMessage);
+        model.addAttribute("message", endingMessage);
+        return "host/program/create/parties";
+    }
+
+    @GetMapping(value = "/list")
     public String list(
             @RequestParam(value = "category", required = false) List<String> category,
             Model model) {
@@ -62,7 +88,7 @@ public class ProgramController {
          *          2개 들어와야하는데 3개가 들어오지는 않았는지
          * 2. 서비스를 호출한다.
          * 3. 서비스가 준 값을 반환한다.
-          */
+         */
         model.addAttribute("programs", programService.getCategory(category));
         return "host/program/list";         // 페이지 반환
     }

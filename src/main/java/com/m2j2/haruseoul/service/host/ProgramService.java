@@ -1,5 +1,6 @@
 package com.m2j2.haruseoul.service.host;
 
+import com.m2j2.haruseoul.entity.Program;
 import com.m2j2.haruseoul.entity.ProgramView;
 import com.m2j2.haruseoul.repository.host.ProgramRepositorySample;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,8 @@ public class ProgramService {
         return result;
     }
 
-
+    public String saveProgram(Program program) {
+        pr.saveProgram(program);
+        return "잘 저장되었습니다!";
+    }
 }

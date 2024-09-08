@@ -25,4 +25,33 @@
             #{category}
         </foreach>
     </select>
+
+    <insert id="saveProgram" parameterType="Program">
+        INSERT INTO M2J2.PROGRAM (
+        TITLE,
+        SUMMARY,
+        DETAIL,
+        "LANGUAGE",
+        START_TIME,
+        END_TIME,
+        STATUS,
+        PRICE,
+        GROUP_SIZE_MAX,
+        GROUP_SIZE_MIN,
+        HOST_ID
+        )
+        VALUES (
+            #{title},
+            #{summary},
+            #{detail},
+            #{language},
+            #{startTime},
+            #{endTime},
+            #{status},
+            #{price},
+            #{groupSizeMax},
+            #{groupSizeMin},
+            #{hostId}
+        )
+    </insert>
 </mapper>
