@@ -1,22 +1,26 @@
 spring:
   application:
-    name: M2J2
+    name: class8th
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@//hi.newlecture.com:1521/XEPDB1
-    username: M2J2
-    password: dpaxnwpdlxn
+    url: jdbc:oracle:thin:@//221.148.97.239:1521/XEPDB1
+    username: rland
+    password: 1128
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 300MB
 
 server:
-  port: 8080
-#  address: ...
+  port: 80
+ # address: ...
 
 
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-  mapper-locations: mappers/*.xml
-  type-aliases-package: com.m2j2.haruseoul.entity
-logging:
-  level:
-    com.m2j2.haruseoul.repository.ProgramRepository: trace
+  mapper-locations: mappers/*Mapper.xml
+  type-aliases-package: com.newlecture.web.cohourt8th.entity
+  logging:
+    level:
+      com.newlecture.web.class8th.repository: trace

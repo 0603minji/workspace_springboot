@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.newlecture.web.cohourt8th.repository.RcmdMenuRepository">
+    <select id="findAllByMenuId" resultType="RcmdMenuView">
+        SELECT RM.*, M.KOR_NAME, M.ENG_NAME, M.PRICE
+        FROM RCMD_MENU RM
+            LEFT JOIN MENU M
+            ON RM.R_MENU_ID = M.ID
+        WHERE RM.MENU_ID = #{id}
+    </select>
+</mapper>

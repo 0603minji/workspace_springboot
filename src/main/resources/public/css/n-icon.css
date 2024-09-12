@@ -1,0 +1,4 @@
+.n-icon\:dashboard::before{
+    --webkit-mask-image:url("../image/icon/dashboard_img.svg");
+    mask-image: url("../image/icon/dashboard_img.svg");
+}

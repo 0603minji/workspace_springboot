@@ -1,0 +1,203 @@
+:where(
+    .n-icon\:home,
+    .n-icon\:dashboard,
+    .n-icon\:login,
+    .n-icon\:logout
+){
+    --icon-width:24px;
+    display: inline-flex;
+    width: var(--icon-width);
+    height: var(--icon-width);
+    overflow: hidden;
+    align-items: center;
+    gap: var(--deco-gap);
+}
+
+/*
+[ --icon-width ]
+    - CSS 변수
+    - var(--icon-width)로 참조
+    
+[ display: inline-flex; ]
+    - 요소의 디스플레이 속성을 inline-flex로 설정합니다.
+    - 인라인 수준의 플렉스 컨테이너
+    - 요소가 텍스트와 같은 흐름에 따라 배치되지만, 플렉스 컨테이너로서 자식 요소를 정렬
+
+[ width: var(--icon-width); 
+  height: var(--icon-width); ]
+    - 요소의 너비와 높이를 --icon-width 변수로 설정
+
+[ overflow: hidden; ]
+    - 요소의 내용이 요소의 경계를 넘어갈 경우, 넘치는 부분을 숨김
+    
+[ align-items: center; ]
+    - 플렉스 컨테이너 내의 자식 요소를 수직 방향으로 중앙에 정렬
+
+[ gap: var(--deco-gap); ]
+    - 플렉스 컨테이너 내의 자식 요소들 사이의 간격을 --deco-gap 변수로 설정
+
+*/
+
+:where(
+    .n-icon\:home,
+    .n-icon\:dashboard,
+    .n-icon\:login,
+    .n-icon\:logout
+)::before{
+    flex-shrink: 0;
+    content: "";
+    display: inline-flex;
+    width: var(--icon-width);
+    height: var(--icon-width);
+    overflow: hidden;
+    mask-size: var(--icon-width);
+    mask-repeat: no-repeat;
+    background-color: rgb(20, 45, 113);
+}
+
+.n-icon\:home::before{
+   
+    mask-image: url("/images/icon/home.svg");
+}
+
+.n-icon\:dashboard::before{
+    
+    mask-image: url("/images/icon/dashboard.svg");
+}
+
+.n-icon\:login::before{
+  
+    mask-image: url("/images/icon/login.svg");
+}
+
+.n-icon\:logout::before{
+   
+    mask-image: url("/images/icon/logout.svg");
+
+}
+
+
+/* #a{
+    border-color: red;
+}
+
+a{
+    border-color: green;
+}
+
+.a{
+    border-color: blueviolet;
+}
+
+.n-btn{
+    border-color: blue;
+}
+
+:is(.a){
+    border-color: white;
+}
+
+:where(.a){
+    border-color: rgb(140, 18, 39);
+} */
+
+
+
+/* ---------------------------------------------------------- */
+
+#RlandId { 
+    /* background-color: red; */
+}
+
+:is(.RlandClass) { 
+    /* background-color: orange; */
+}
+
+.RlandClass { 
+    /* background-color: green; */
+}
+
+h1 { 
+    /* background-color: yellow; */
+}
+
+:where(#RlandClass) { 
+    /* background-color: blue; */
+}
+
+div>:where(h1,h2,h3,h4,h5){
+    /* color:aqua; */
+}
+
+/* ----------------------------------------------------------- */
+
+:where(div, section) :where(h1,h2,h3,h4,h5){
+    color: red;
+}
+
+
+:where(div, section)>:where(h1,h2,h3,h4,h5){
+    color: blue;    
+}
+
+
+.n-deco{
+    width: auto;
+    border: 1px solid var(--icon-color-1, black);
+    padding: 0px 5px;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+.n-btn:is(
+    .n-icon\:home,
+    .n-icon\:dashboard,
+    .n-icon\:login,
+    .n-icon\:logout
+):not(.n-deco)
+{
+    text-indent: -999px;
+    border: 1px solid var(--icon-color-1, black);
+    padding: 0px 5px;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+.n-btn:hover{
+    background-color: rgb(150, 200, 246);
+    color: blue;
+}
+
+.n-btn:hover::before{   
+    background-color:rgb(71, 46, 213);
+
+}
+
+
+:root{
+    --color-main-1: #D86259;
+    --color-main-2: #905634;
+    --color-main-3: #5E2808;
+    --color-sub-1: #F3E184;
+    --color-accent-1: #334DCF;
+}
+
+.n-btn-color\:main{
+    background-color: var(--color-main-3);
+
+    color:#F3E184;
+}
+
+.n-btn-color\:main::before{
+    background-color: #F3E184;
+}
+
+.n-btn-color\:main:hover{
+    background-color: #F3E184;
+    color: #5E2808;
+}
+
+.n-btn-color\:main:hover::before{
+    background-color: var(--color-main-3);
+}
+

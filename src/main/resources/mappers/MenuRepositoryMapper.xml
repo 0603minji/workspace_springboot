@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.newlecture.web.cohourt8th.repository.MenuRepository">
+
+    <select id="findAll" resultType="MenuView">
+        SELECT MENU.*, MI.SRC IMG, NVL(ML.LIKE_COUNT, 0) LIKE_COUNT
+        FROM MENU LEFT JOIN (SELECT * FROM MENU_IMAGE WHERE IS_DEFAULT=1) MI
+        ON MENU.ID = MI.MENU_ID
+        LEFT JOIN (SELECT MENU_ID, COUNT(MENU_ID) LIKE_COUNT FROM MENU_LIKE GROUP BY MENU_ID) ML
+        ON MENU.ID = ML.MENU_ID
+        <where>
+            <if test="categoryId != null">
+                CATEGORY_ID = #{categoryId}
+            </if>
+
+            <if test="query != null">
+                AND KOR_NAME LIKE '%${query}%'
+            </if>
+        </where>
+        ORDER BY MENU.REG_DATE DESC
+    </select>
+
+
+    <select id="findById" resultType="Menu">
+        SELECT *
+        FROM MENU
+        WHERE ID = #{id}
+    </select>
+</mapper>

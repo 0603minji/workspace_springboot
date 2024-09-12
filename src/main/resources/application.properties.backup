@@ -1,0 +1,7 @@
+spring.application.name=class8th
+server.port=8080
+#server.address=...
+
+# properties와 yml 형식중 properties가 우선순위
+# 2개 파일 공존해도 가능
+# .backup 확장명 붙이면 실행 우선 x

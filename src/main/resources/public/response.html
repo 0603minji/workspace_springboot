@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            margin: 0;
+        }
+
+        @media (max-width: 699px) {
+            .box1 {
+                width: 100%;
+                height: 100px;
+                background-color: yellow;
+                border: 5px solid red;
+            }
+
+        }
+
+        @media (700px<=width<=1200px) {
+            .box1 {
+                height: 200px;
+                background-color: green;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<div class="box1"></div>
+</body>
+</html>
+
+
+<!--
+
+반응형
+= 모바일 페이지를 먼저 만드는 것
+
+등장 배경
+다양한 장치를 위한 ui구현 문제
+
+모바일에 최적화된 웹만 구현하고 장치가 바뀌면 크기를 키워지도록 만드는 것
+모바일 웹을 기반으로 pc는 레이아웃을 차등 적용하는 것 (커지는 것에 대한 반응을 적용하는 것)
+
+meta tag
+viewport 설정을 통해 반응형 구현
+-->

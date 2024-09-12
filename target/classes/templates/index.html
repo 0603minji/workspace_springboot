@@ -1,36 +1,88 @@
-<!DOCTYPE html>
-<html lang="ko"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{inc/layout}"
->
+<!doctype html>
+<html lang="en"
+      xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="inc/layout">>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haru Seoul</title>
-    <link rel="stylesheet" href="/css/index.css"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
 
-<main layout:fragment="main" class="container">
-    <!-- First Image -->
-    <div class="image-container">
-        <img src="image/home-guest.png" alt="introduction for guest" class="image">
-        <a href="" class="button">1day 서울러 되러가기</a>
+<main layout:fragment="main">
+    <!-- 상단 환영인사&이미지 -->
+    <section class="greeting">
+        <div class="greeting-inner">
+            <!-- 1 -->
+            <div>
+                <h1>알랜드에 오신 것을 환영합니다.</h1>
+                <h2>부안에 오면 꼭 들리는 카페</h2>
+                <div>
+                    <a href="./menu/list.html" class="btn btn-default">주문하기</a>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div>
+                <img src="image/main-top.png" alt="Rland">
+            </div>
+            <!-- 3 -->
+            <div>
+                <div>Rland Coffee</div>
+                <div>
+                    <img src="image/logo-badge.svg" alt="Rland">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- rland를 추천합니다 -->
+    <section class="recommend-rland">
+        <h1>알랜드만의 특별함</h1>
+        <section class="recommend-rland-fruit">
+            <div>
+                <img src="image/main-fruit.png" alt="과일청">
+            </div>
+            <h1>직접 만든 <strong>과일청</strong>을 맛보세요.</h1>
+            <p>
+                신선한 과일과 알랜드만의 레시피로 과일향의 풍미를 충분히 느낄 수
+                있는 수제청을 드셔보세요.
+            </p>
+        </section>
+        <section class="recommend-rland-cookie">
+            <div>
+                <img src="image/main-cookie.png" alt="수제 쿠키">
+            </div>
+            <h1>우리가 구운 <strong>수제 쿠키</strong>를 만나보세요.</h1>
+            <p>
+                신선한 버터 그리고 견과류를 이용하여 바삭함을 더해 매일마다 직접
+                구운 맛난 쿠키를 만나보세요.
+            </p>
+        </section>
+        <section class="recommend-rland-roasting">
+            <div>
+                <img src="image/main-roasting.png" alt="로스팅">
+            </div>
+            <h1>다양한 <strong>로스팅</strong>으로 다채로운 맛을 느껴보세요.</h1>
+            <p>
+                신선한 과일과 알랜드만의 레시피로 과일향의 풍미를 충분히 느낄 수
+                있는 수제청을 드셔보세요.
+            </p>
+        </section>
+    </section>
+
+    <!-- 명소 찾기 -->
+    <section class="tourist-spot">
+        <h1>알랜드 주변의 명소를 찾아보세요.</h1>
+    </section>
+    <div class="recommend-coffe-spot">
+        알랜드 주변의 30곳이 넘는 힐링 장소에서 맛나는 커피와 경치로 힐링을
+        해보세요.
     </div>
 
-    <!-- Second Image -->
-    <div class="image-container">
-        <img src="image/home-host.png" alt="introduction for host" class="image">
-        <a href="" class="button">5분만에 호스트 되러가기</a>
-    </div>
-
-    <div class="content">
-        <p class="content-title">Haru Seoul은 외국인들에게 서울에서 현지인의 삶을 직접 체험할 수 있는 하루를 제공합니다.</p>
-        <p class="content-main">
-            단순한 관광이 아니라 서울 시민처럼 대중교통을 이용하고, 길거리 음식을 맛보고, 전통시장이나 동네 카페를 방문하거나, 서울의 숨은 명소들을 체험하는 프로그램을 제공합니다.</p>
-    </div>
 </main>
-
 </body>
 </html>
+
+

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Cohourt8thApplication<cohourt8th>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.newlecture.web.cohourt8th.Cohourt8thApplication",
+            "projectName": "cohourt8th",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
